@@ -7,24 +7,21 @@ class HomeViewAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(30),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Image.asset(
-            AppImages.logo,
-            width: 75,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Image.asset(
+          AppImages.logo,
+          width: 75,
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            FontAwesomeIcons.magnifyingGlass,
+            color: Colors.white,
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              FontAwesomeIcons.magnifyingGlass,
-              color: Colors.white,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
