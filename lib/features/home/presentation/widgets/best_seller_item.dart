@@ -1,6 +1,7 @@
 import 'package:bookly/core/constants/app_fonts.dart';
 import 'package:bookly/core/constants/styles.dart';
 import 'package:bookly/features/home/presentation/widgets/book_item.dart';
+import 'package:bookly/features/home/presentation/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerItem extends StatelessWidget {
@@ -9,7 +10,7 @@ class BestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.only(left: 30, right: 45),
       child: Row(
         children: [
           SizedBox(
@@ -33,15 +34,21 @@ class BestSellerItem extends StatelessWidget {
                     style: Styles.textStyle14,
                   ),
                 ),
-                Text(
-                  '19.99 €',
-                  style: Styles.textStyle20.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '19.99 €',
+                      style: Styles.textStyle20.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const BookRating()
+                  ],
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
