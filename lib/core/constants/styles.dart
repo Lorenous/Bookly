@@ -1,3 +1,4 @@
+import 'package:bookly/core/constants/app_fonts.dart';
 import 'package:flutter/material.dart';
 
 abstract class Styles {
@@ -22,5 +23,6 @@ abstract class Styles {
   static const TextStyle textStyle30 = TextStyle(
     fontSize: 30,
     color: Colors.white,
+    fontFamily: AppFonts.gtSectraFine,
   );
 }
