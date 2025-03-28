@@ -17,7 +17,7 @@ class HomeViewBody extends StatelessWidget {
             children: [
               const HomeViewAppBar(),
               const SizedBox(height: 30),
-              const HomeBooksListView(),
+              const HomeBooksCarouselView(),
               const SizedBox(height: 55),
               Padding(
                 padding: const EdgeInsets.only(left: 30, bottom: 25),
