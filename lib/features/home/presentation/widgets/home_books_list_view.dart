@@ -26,20 +26,26 @@ class HomeBooksListView extends StatelessWidget {
   }
 }
 
-class HomeBooksCarouselView extends StatelessWidget {
+class HomeBooksCarouselView extends StatefulWidget {
   const HomeBooksCarouselView({super.key});
 
+  @override
+  State<HomeBooksCarouselView> createState() => _HomeBooksCarouselViewState();
+}
+
+class _HomeBooksCarouselViewState extends State<HomeBooksCarouselView> {
+  final CarouselController _controller = CarouselController(initialItem: 1);
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.27,
       child: CarouselView.weighted(
         enableSplash: false,
-        flexWeights: [3, 4, 3],
-        padding: EdgeInsets.zero,
+        flexWeights: [3, 5, 3],
+        padding: const EdgeInsets.only(right: 16),
         backgroundColor: AppColors.kPrimaryColor,
         itemSnapping: true,
-        controller: CarouselController(initialItem: 1),
+        controller: _controller,
         children: List.generate(
           10,
           (index) => BookItem(
