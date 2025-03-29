@@ -1,4 +1,6 @@
+import 'package:bookly/core/constants/hive_boxes.dart';
 import 'package:bookly/core/utils/api_service.dart';
+import 'package:bookly/core/utils/functions/save_books.dart';
 import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/domain/entities/book_entity.dart';
 
@@ -18,6 +20,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
     var data = await _apiService.get(
         endPoint: 'volumes?q=subject:Novels&filter=free-ebooks');
     List<BookEntity> books = getBooksList(data);
+    saveBooksData(books, boxName: HiveBoxes.homeBooks);
     return books;
   }
 
