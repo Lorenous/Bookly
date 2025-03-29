@@ -4,7 +4,7 @@ import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:bookly/features/home/domain/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
 
-class FetchHomeBooksUseCase extends UseCase<List<BookEntity>, void> {
+class FetchHomeBooksUseCase implements UseCase<List<BookEntity>, void> {
   final HomeRepo _homeRepo;
 
   FetchHomeBooksUseCase({required HomeRepo homeRepo}) : _homeRepo = homeRepo;
