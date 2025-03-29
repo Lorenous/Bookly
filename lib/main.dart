@@ -2,6 +2,7 @@ import 'package:bookly/config/routes/app_routes.dart';
 import 'package:bookly/core/constants/app_colors.dart';
 import 'package:bookly/core/constants/hive_boxes.dart';
 import 'package:bookly/core/utils/service_locator.dart';
+import 'package:bookly/core/utils/simple_bloc_observer.dart';
 import 'package:bookly/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:bookly/features/home/domain/use_cases/fetch_home_books_use_case.dart';
@@ -21,6 +22,7 @@ void main() async {
   await Hive.openBox<BookEntity>(HiveBoxes.homeBooks);
   await Hive.openBox<BookEntity>(HiveBoxes.newestBooks);
   await Hive.openBox<BookEntity>(HiveBoxes.relatedBooks);
+  Bloc.observer = SimpleBlocObserver();
 
   runApp(const Bookly());
 }
