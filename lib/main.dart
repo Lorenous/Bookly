@@ -11,6 +11,8 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter<BookEntity>(BookEntityAdapter());
   await Hive.openBox<BookEntity>(HiveBoxes.homeBooks);
+  await Hive.openBox<BookEntity>(HiveBoxes.newestBooks);
+  await Hive.openBox<BookEntity>(HiveBoxes.relatedBooks);
 
   runApp(const Bookly());
 }

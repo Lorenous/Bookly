@@ -29,6 +29,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
     var data = await _apiService.get(
         endPoint: 'volumes?q=subject:Novels&filter=free-ebooks&orderBy=newest');
     List<BookEntity> books = getBooksList(data);
+    saveBooksData(books, boxName: HiveBoxes.newestBooks);
     return books;
   }
 
@@ -38,6 +39,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
         endPoint:
             'volumes?q=subject:Novels&filter=free-ebooks&orderBy=relevance');
     List<BookEntity> books = getBooksList(data);
+    saveBooksData(books, boxName: HiveBoxes.relatedBooks);
     return books;
   }
 }

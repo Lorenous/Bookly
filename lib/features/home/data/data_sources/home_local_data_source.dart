@@ -14,14 +14,10 @@ class HomeLocalDataSorceImp implements HomeLocalDataSource {
       Hive.box<BookEntity>(HiveBoxes.homeBooks).values.toList();
 
   @override
-  List<BookEntity> getNewestBooks() {
-    // TODO: implement getNewestBooks
-    throw UnimplementedError();
-  }
+  List<BookEntity> getNewestBooks() =>
+      Hive.box<BookEntity>(HiveBoxes.newestBooks).values.toList();
 
   @override
-  List<BookEntity> getRelatedBooks() {
-    // TODO: implement getRelatedBooks
-    throw UnimplementedError();
-  }
+  List<BookEntity> getRelatedBooks() =>
+      Hive.box<BookEntity>(HiveBoxes.relatedBooks).values.toList();
 }
