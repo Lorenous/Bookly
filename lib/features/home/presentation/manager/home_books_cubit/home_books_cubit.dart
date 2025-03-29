@@ -14,12 +14,8 @@ class HomeBooksCubit extends Cubit<HomeBooksState> {
     emit(HomeBooksLoading());
     final result = await _fetchHomeBooksUseCase.call();
     result.fold(
-      (failure) => emit(
-        HomeBooksFailure(errMessage: failure.errMessage),
-      ),
-      (books) => emit(
-        HomeBooksSuccess(books: books),
-      ),
+      (failure) => emit(HomeBooksFailure(errMessage: failure.errMessage)),
+      (books) => emit(HomeBooksSuccess(books: books)),
     );
   }
 }
