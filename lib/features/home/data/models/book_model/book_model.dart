@@ -24,6 +24,7 @@ class BookModel extends BookEntity {
   }) : super(
           title: volumeInfo!.title ?? 'No Title',
           authorName: volumeInfo.authors?.first ?? 'Unknown Author',
+          image: volumeInfo.imageLinks?.thumbnail ?? 'No Cover',
           price: 0,
           ratingAvg: 0,
           ratingCount: 0,
